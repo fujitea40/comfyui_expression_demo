@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Expression Demo Gallery</title>
+  <meta name="description" content="Model-by-model demo galleries for expression variations (ComfyUI / Stable Diffusion)" />
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --panel: #121826;
+      --text: #e8eefc;
+      --muted: #a7b2cc;
+      --border: rgba(255,255,255,.10);
+      --link: #8ab4ff;
+      --ok: rgba(46, 204, 113, .25);
+      --warn: rgba(241, 196, 15, .20);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      background: radial-gradient(1200px 600px at 15% 10%, rgba(138,180,255,.14), transparent 55%),
+                  radial-gradient(900px 500px at 90% 5%, rgba(46,204,113,.10), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 28px 18px 14px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(18, 24, 38, .55);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; }
+    h1 { margin: 0 0 8px; font-size: 22px; }
+    .sub {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      align-items: center;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      background: rgba(255,255,255,.03);
+    }
+    .pill strong { color: var(--text); font-weight: 600; }
+    main { padding: 22px 18px 34px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(18, 24, 38, .66);
+      box-shadow: 0 6px 24px rgba(0,0,0,.22);
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(255,255,255,.03);
+    }
+    .badge.ok { background: var(--ok); color: var(--text); }
+    .badge.wip { background: var(--warn); color: var(--text); }
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 0 0 10px;
+    }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 11px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .btn:hover { background: rgba(255,255,255,.07); text-decoration: none; }
+    .note {
+      margin-top: 18px;
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      background: rgba(255,255,255,.02);
+    }
+    footer {
+      padding: 16px 18px 28px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    code { color: var(--text); background: rgba(255,255,255,.04); padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <h1>表情差分デモギャラリー / Expression Demo Gallery</h1>
+      <p class="sub">
+        ComfyUI / Stable Diffusion の表情差分を、モデル別にまとめたデモページです。<br />
+        Preview galleries for facial expression variations, organized by model.
+      </p>
+      <div class="toolbar">
+        <span class="pill"><strong>用途</strong>：購入前確認用デモ / Preview</span>
+        <span class="pill"><strong>内容</strong>：summary.html + images</span>
+        <span class="pill"><strong>更新</strong>：不定期 / Periodic</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <h2 style="margin:0; font-size:16px;">モデル一覧 / Model list</h2>
+      <p class="sub" style="margin-top:6px;">
+        各モデルの <code>summary.html</code> を開いてください。 / Open each model’s <code>summary.html</code>.
+      </p>
+
+      <div class="grid">
+        <!-- MeinaMix -->
+        <section class="card">
+          <h2>
+            MeinaMix
+            <span class="badge ok">Demo available</span>
+          </h2>
+          <p class="meta">
+            表情差分の出方を確認するためのデモ。<br />
+            Demo gallery for checking expression consistency.
+          </p>
+          <div class="actions">
+            <a class="btn" href="./MeinaMix_demo/summary.html">Open summary.html</a>
+          </div>
+        </section>
+
+        <!-- Counterfeit -->
+        <section class="card">
+          <h2>
+            Counterfeit
+            <span class="badge ok">Demo available</span>
+          </h2>
+          <p class="meta">
+            表情差分デモ（モデル別比較用）。<br />
+            Demo gallery for model comparison.
+          </p>
+          <div class="actions">
+            <a class="btn" href="./Counterfeit_demo/summary.html">Open summary.html</a>
+          </div>
+        </section>
+
+        <!-- Placeholder / WIP models -->
+        <section class="card">
+          <h2>
+            More models
+            <span class="badge wip">WIP</span>
+          </h2>
+          <p class="meta">
+            その他モデルについても現在確認中。数モデルのデモを追加予定です。<br />
+            More models are currently being evaluated, and demo galleries for several additional models will be added.
+          </p>
+          <div class="actions">
+            <!-- 追加したらこの形式で増やす -->
+            <!-- <a class="btn" href="./SomeModel_demo/summary.html">Open summary.html</a> -->
+            <span class="btn" style="opacity:.65; cursor:default;">Coming soon</span>
+          </div>
+        </section>
+      </div>
+
+      <div class="note">
+        <strong>注意 / Notes</strong><br />
+        - 本リポジトリはデモ用途です。デモ画像の再利用・再配布は禁止です（<code>DEMO_IMAGES_LICENSE.txt</code> を参照）。<br />
+        - This repository is for preview only. Demo images must not be reused or redistributed (see <code>DEMO_IMAGES_LICENSE.txt</code>).<br />
+        - モデル重みは同梱していません。必要なモデルは各配布元（例：Civitai等）から入手してください。<br />
+        - Model weights are not included. Please obtain required models from their distribution pages.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>Tip: GitHub Pages の公開ルートが <code>/docs</code> の場合、このファイルは <code>docs/index.html</code> になります。</div>
+    </div>
+  </footer>
+</body>
+</html>
