@@ -29,10 +29,10 @@ More models are currently being evaluated, and we plan to add demo galleries for
 
 ## デモギャラリー（summary.html） / Demo galleries (summary.html)
 
-各モデルのギャラリーはこちら / Open the gallery for each model:
+[各モデルのギャラリーはこちら / Open the gallery for each model](https://fujitea40.github.io/comfyui_expression_demo/):
 
-- [**MeinaMix**](docs/MeinaMix_demo/summary.html)
-- [**Counterfeit**](docs/Counterfeit_demo/summary.html)
+- [**MeinaMix**](https://fujitea40.github.io/comfyui_expression_demo/MeinaMix_demo/summary.html)
+- [**Counterfeit**](https://fujitea40.github.io/comfyui_expression_demo/Counterfeit_demo/summary.html)
 
 > GitHub Pagesで閲覧している場合は、公開されたPagesのURLから上記パスにアクセスしてください。  
 > If you are viewing via GitHub Pages, open these paths from the published Pages URL.
