@@ -1,0 +1,14 @@
+DEMO IMAGES LICENSE / TERMS
+
+All images under the "docs/**/images/" directories are provided for preview purposes only.
+
+Copyright:
+- These demo images are copyrighted by the repository owner (and/or subject to the original model/content licenses).
+
+Permissions:
+- Viewing is allowed.
+- Reuse, redistribution, reuploading, modification, and commercial use are NOT permitted without explicit permission.
+
+Notes:
+- Model weights are NOT included in this repository.
+- For model and related licenses, refer to the distribution pages linked in THIRD_PARTY_NOTICES.md.
