@@ -1,0 +1,2 @@
+# comfyui_expression_demo
+ComfyUIで作成した表情差分プリセットのデモ用ページです。
