@@ -19,6 +19,15 @@
       z-index: 10;
     }
 
+    /* Mobile optimization: unstick header to save space */
+    @media (max-width: 600px) {
+      header {
+        position: static;
+        padding-top: 14px;
+        /* Slightly reduce top padding on mobile */
+      }
+    }
+
     .wrap {
       max-width: 980px;
       margin: 0 auto;
@@ -160,12 +169,14 @@
       <p class="sub">
         ComfyUI / Stable Diffusion の表情差分を、モデル別にまとめたデモページです。<br />
         Preview galleries for facial expression variations, organized by model.<br />
-        詳しくは、githubの以下のページをご覧ください。<br />
-        For more details, please see the following page on GitHub.<br />
-        https://github.com/fujitea40/comfyui-experiments <br />
-        https://github.com/fujitea40/comfyui_expression_demo <br />
-
-
+        詳しくは、githubの <a href="https://github.com/fujitea40/comfyui-experiments"
+          style="color:var(--text)">comfyui-experiments</a> および <a
+          href="https://github.com/fujitea40/comfyui_expression_demo"
+          style="color:var(--text)">comfyui_expression_demo</a> をご覧ください。<br />
+        For more details, please see <a href="https://github.com/fujitea40/comfyui-experiments"
+          style="color:var(--text)">comfyui-experiments</a> and <a
+          href="https://github.com/fujitea40/comfyui_expression_demo"
+          style="color:var(--text)">comfyui_expression_demo</a> on GitHub.
       </p>
       <div class="toolbar">
         <span class="pill"><strong>用途</strong>：購入前確認用デモ / Preview</span>
@@ -213,6 +224,21 @@
           </div>
         </section>
 
+        <!-- AbyssOrange -->
+        <section class="card">
+          <h2>
+            AbyssOrange
+            <span class="badge ok">Demo available</span>
+          </h2>
+          <p class="meta">
+            表情差分デモ（モデル別比較用）。<br />
+            Demo gallery for model comparison.
+          </p>
+          <div class="actions">
+            <a class="btn" href="./AbyssOrange_demo/summary.html">Open summary.html</a>
+          </div>
+        </section>
+
         <!-- Placeholder / WIP models -->
         <section class="card">
           <h2>
@@ -253,6 +279,17 @@
 
   <footer>
     <div class="wrap">
+      <div style="margin-bottom: 20px;">
+        <h3 style="margin: 0 0 8px; font-size: 14px; color: var(--text);">Credits (Models)</h3>
+        <p style="margin: 0 0 8px;">Images in this repository were generated using the following model(s):</p>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
+          <li><strong>MeinaMix</strong> — by Meina (Civitai) — <em style="opacity: 0.8;">Attribution required (per
+              Civitai permissions)</em></li>
+          <li><strong>Counterfeit</strong> — by rpdwdw (Civitai)</li>
+          <li><strong>AbyssOrangeMix3</strong> — by liudinglin (Civitai) — <em style="opacity: 0.8;">Attribution
+              required (per Civitai permissions)</em></li>
+        </ul>
+      </div>
       <div>Tip: GitHub Pages の公開ルートが <code>/docs</code> の場合、このファイルは <code>docs/index.html</code> になります。</div>
     </div>
   </footer>
